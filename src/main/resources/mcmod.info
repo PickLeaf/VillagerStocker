@@ -2,14 +2,14 @@
 {
   "modid": "villagerstocker",
   "name": "Villager Stocker",
-  "description": "1.7.10村民补货方块",
+  "description": "Restock for your villagers, Go and enojoy the trade!",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/PickLeaf/VillagerStocker",
   "updateUrl": "",
   "authorList": ["PickLeaf"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
+  "credits": "",
+  "logoFile": "logo.png",
   "screenshots": [],
   "dependencies": []
 }
