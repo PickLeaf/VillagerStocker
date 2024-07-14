@@ -25,6 +25,6 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event){
-        GameRegistry.addRecipe(new ItemStack(blockStocker, 1, 1), "CCC","CCC","CEC", 'C',Blocks.cobblestone, 'E',Blocks.emerald_block);
+        GameRegistry.addRecipe(new ItemStack(blockStocker, 1, 1), "CEC","CCC","CCC", 'C',Blocks.cobblestone, 'E',Blocks.emerald_block);
     }
 }
