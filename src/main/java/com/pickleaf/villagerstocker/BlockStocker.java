@@ -22,7 +22,6 @@ public final class BlockStocker extends Block {
     private double radius;
     private float chance;
     private Block chargeBlock;
-    @SideOnly(Side.CLIENT)
     private static IIcon[] icons = new IIcon[3];
 
     public BlockStocker(double radius, float chance, String block) {
