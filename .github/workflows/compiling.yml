@@ -16,6 +16,8 @@ jobs:
           java-version: 8
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v3.5.0
+      - name: Permissions
+        run: git update-index --chmod=+x build.gradlew
       - name: Build artifacts
         run: ./gradlew build -Pbuild.release=true
       - name: Upload assets to GitHub
