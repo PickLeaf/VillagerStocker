@@ -14,8 +14,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 8
-      - name: Permission up
-        run: git update-index --chmod=+x build..gradlew
+      - name: Permissions
+        run: chmod +x build.gradle
       - name: Build artifacts
         run: ./gradlew build.gradle -Pbuild.release=true
       - name: Upload assets to GitHub
