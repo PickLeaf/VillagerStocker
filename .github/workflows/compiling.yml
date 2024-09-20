@@ -3,9 +3,9 @@ name: Compiling
 on:
   push:
   
-jobs:
+  jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4.1.7
@@ -14,10 +14,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 8
-      - name: Set up Gradle
-        uses: gradle/gradle-build-action@v3.5.0
-      - name: Permissions
-        run: git update-index --chmod=+x ./build.gradlew
       - name: Build artifacts
         run: ./gradlew build -Pbuild.release=true
       - name: Upload assets to GitHub
@@ -25,4 +21,4 @@ jobs:
         with:
           # Filter built files to disregard -sources and -dev, and leave only the minecraft-compatible jars.
           files: 'build/libs/*[0-9].jar;LICENSE'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }} 
