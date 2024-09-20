@@ -6,15 +6,20 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Compile
-      uses: Ruochenfu2011/compilation@v1
-      
-    - name: Archive Artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: Artifacts
-        path: ./build/libs
+      - name: Checkout sources
+        uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: 8
+      - name: Build artifacts
+        run: ./gradlew build -Pbuild.release=true
+      - name: Upload assets to GitHub
+        uses: AButler/upload-release-assets@v2.0
+        with:
+          # Filter built files to disregard -sources and -dev, and leave only the minecraft-compatible jars.
+          files: 'build/libs/*[0-9].jar;LICENSE'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
