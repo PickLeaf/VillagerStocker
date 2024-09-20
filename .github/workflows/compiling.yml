@@ -15,9 +15,9 @@ jobs:
           distribution: 'temurin'
           java-version: 8
       - name: Permission up
-        run: git update-index --chmod=+x build.cmd
+        run: git update-index --chmod=+x build..gradlew
       - name: Build artifacts
-        run: ./gradlew build -Pbuild.release=true
+        run: ./gradlew build.gradle -Pbuild.release=true
       - name: Upload assets to GitHub
         uses: AButler/upload-release-assets@v3.0
         with:
