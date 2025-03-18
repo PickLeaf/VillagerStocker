@@ -53,6 +53,14 @@ public final class BlockStocker extends Block {
     }
 
     @Override
+    public boolean hasComparatorInputOverride() { return true; }
+
+    @Override
+    public int getComparatorInputOverride(World world, int x, int y, int z, int p_149736_5_) {
+        return world.getBlockMetadata(x,y,z)==1 ? 15 : 0;
+    }
+
+    @Override
     public boolean hasTileEntity(int metadata) { return true; }
 
     @Override
